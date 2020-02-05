@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <title>Meldingen | p2000-monitor</title>
+  <link rel="stylesheet" href="assets/css/app.css" />
+  <link rel="stylesheet" href="assets/css/style1.css" />
+  <script src="assets/bower_components/modernizr/modernizr.js"></script>
+  <!-- <script src="assets/js/datum.js"></script> -->
+  <!-- <script src="assets/js/meldingen.js"></script> -->
+</head>
+
+<body class="backgroundimg">
+  <div class="large-1 columns">
+
+  </div>
+  <div class="large-4 columns extra-padding">
+    <div class="winbox-blue text-center">
+      <h4 class="text-right" style="color:#fff" id="weekday"><i class="fi fi-calendar"></i></h4>
+      <span style="font-size:6em;font-family:'sans serif',arial;" id="day">bier</span>
+      <br />
+      <span style="font-size:2em;font-family:'sans serif',arial;" id="month"></span>
+
+    </div>
+  </div>
+  <a onclick="toggle()">
+    <div class="large-4 columns extra-padding">
+      <div class="winbox-green text-center" id="S_WB">
+        <h4 class="text-center" style="color:#fff">sound not fully working sorry</h4>
+        <p>
+          <span style="font-size:4em;font-family:'sans serif',arial;"><i id="MyId" class="fa fi-volume"> ON</i>
+          </span><br />
+        </p>
+      </div>
+    </div>
+  </a>
+  
+  <script>
+    var audio = new Audio('assets/sounds/click.mp3');
+    function toggle() {
+      audio.play();
+      if (document.getElementById("MyId").className == "fa fi-volume")
+        document.getElementById("MyId").className = "fa fi-volume-strike";
+      else
+        document.getElementById("MyId").className = "fa fi-volume";
+
+      if (document.getElementById("MyId").className == "fa fi-volume")
+        document.getElementById("MyId").innerHTML = " ON";
+      else
+        document.getElementById("MyId").innerHTML = " OFF";
+      
+      if (document.getElementById("MyId").className == "fa fi-volume")
+        document.getElementById("S_WB").className = "winbox-green text-center";
+      else
+        document.getElementById("S_WB").className = "winbox-red text-center";
+    }
+
+  </script>
+  <div class="large-4 columns extra-padding">
+    <div class="winbox-red text-center">
+
+      <h4 class="text-right" style="color:#fff"><i class="fi fi-clock"></i> tijd</h4>
+      <p>
+        <span style="font-size:4em;font-family:'sans serif',arial;" id="time_span"></span>
+      </p>
+
+    </div>
+  </div>
+  <div class="large-3 columns extra-padding">
+    <div class="winbox-blue text-center">
+      <h4 class="text-right" style="color:#fff"><i class="fi fi-clock"></i> Melding-Tijd</h4>
+      <p style="font-size:2em;font-family:'sans serif',arial;" id="tijd"></p>
+
+    </div>
+  </div>
+
+  <div class="large-6 columns extra-padding">
+    <div class="winbox-green text-center">
+      <h4 class="text-right" style="color:#fff"><i class="fi fi-info"></i> Melding</h4>
+      <p style="font-size:2em;font-family:'sans serif',arial;" id="melding"></p>
+    </div>
+  </div>
+  <div class="large-3 columns extra-padding">
+    <div class="winbox-red text-center">
+
+      <h4 class="text-right" style="color:#fff"><i class="fi fi-info"></i> Capcode's</h4>
+      <p style="font-size:1em;font-family:'sans serif',arial;" id="capcode"></p>
+
+    </div>
+  </div>
+  <input type="button" id="action-btn" value="Retrieve 10 first rows in the database" />
+
+  <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="assets/bower_components/foundation/js/foundation.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/reveal.js"></script>
+</body>
+<script src="assets/js/meldingen.js"></script>
+
+</html>
